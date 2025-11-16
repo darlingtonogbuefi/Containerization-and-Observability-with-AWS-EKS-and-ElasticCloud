@@ -74,6 +74,7 @@ elastic-selfManagedFleet/values-fleet-server.yaml
 .terraform
 *.tfvars
 #.env.production
+.env.production.master
 
 
 
