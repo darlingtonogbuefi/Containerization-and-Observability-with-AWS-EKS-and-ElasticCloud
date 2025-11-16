@@ -8,6 +8,7 @@ apm.start({
   secretToken: 'Csyqae4fuSRDtCAaca', // your secret token
   serverUrl: 'https://1309e7ae5e8b4a9fadf8f621b090283c.apm.us-central1.gcp.cloud.es.io:443', // your APM server URL
   environment: 'production', // your environment
+  active: process.env.NODE_ENV !== 'production', // disable APM in production
 });
 
 export default apm;
