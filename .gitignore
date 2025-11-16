@@ -43,6 +43,8 @@ yarn-error.log*
 
 .env*.local
 .env
+#.env.production
+.env.production.master
 # vercel
 .vercel
 
@@ -73,8 +75,7 @@ elastic-selfManagedFleet/values-fleet-server.yaml
 *.tfstate.*
 .terraform
 *.tfvars
-#.env.production
-.env.production.master
+
 
 
 
