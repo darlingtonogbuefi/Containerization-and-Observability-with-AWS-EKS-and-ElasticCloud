@@ -73,7 +73,7 @@ elastic-selfManagedFleet/values-fleet-server.yaml
 *.tfstate.*
 .terraform
 *.tfvars
-.env.production
+#.env.production
 
 
 
