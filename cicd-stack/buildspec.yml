@@ -1,3 +1,7 @@
+# CICD Buildspec for building, pushing Docker image, and updating EKS deployment
+# cicd-stack\buildspec.yml
+
+
 version: 0.2
 
 env:
