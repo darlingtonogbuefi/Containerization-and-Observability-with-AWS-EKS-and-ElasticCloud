@@ -1,11 +1,13 @@
 // core-stack\iam.tf
 
 #########################################
-# IAM + EKS Access Setup for cribr-cluster
+# IAM + EKS Access Setup for cribr-cluster 
 #########################################
 
+data "aws_caller_identity" "current" {}
+
 locals {
-  root_arn = "arn:aws:iam::493834426110:root"
+  root_arn = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" # Fetch current AWS identity
 
   # Full admin principals for AWS and EKS
   full_admins = {
