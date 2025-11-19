@@ -1,4 +1,4 @@
-// app-stack\alb-controller.tf
+// alb-stack\alb-controller.tf
 
 #########################################
 # ALB Controller IAM + Helm

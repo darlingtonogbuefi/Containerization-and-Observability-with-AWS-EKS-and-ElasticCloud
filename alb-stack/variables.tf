@@ -1,4 +1,4 @@
-#  app-stack\variables.tf
+#  alb-stack\variables.tf
 
 #########################################
 # Input Variables for App Stack

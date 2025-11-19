@@ -1,4 +1,4 @@
-// app-stack\main.tf
+// alb-stack\main.tf
 
 #############################################
 # Terraform Configuration

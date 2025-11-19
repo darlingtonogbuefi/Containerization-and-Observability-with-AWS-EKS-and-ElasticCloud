@@ -1,4 +1,4 @@
-// app-stack\ecr.tf
+// alb-stack\ecr.tf
 
 #############################################
 # ECR Repository and Policy
