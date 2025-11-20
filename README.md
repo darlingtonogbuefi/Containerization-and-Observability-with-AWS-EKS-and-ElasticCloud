@@ -64,7 +64,7 @@ Install the following tools:
 | **Terraform CLI** | Infrastructure as Code |
 | **AWS CLI v2** | Interacting with AWS |
 | **kubectl** | Kubernetes cluster management |
-| **Helm** | Deploying Helm charts |
+| **Helm** | package management |
 
 ---
 
