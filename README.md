@@ -172,6 +172,55 @@ kubectl get ingress -n <namespace>
 kubectl describe ingress <name>
 kubectl get svc -n <namespace>
 
+Step 8:
+🧹 Cleanup: Destroy All Resources (Terraform Destroy)
+
+To avoid unnecessary AWS charges, destroy all provisioned resources once you're done testing.
+
+⚠️ Warning:
+This will permanently delete the EKS cluster, VPC, ALB, CI/CD pipelines, ECR repos, Elasticsearch resources, and all associated infrastructure.
+
+Cleanup Order (Critical!)
+
+Terraform stacks must be destroyed in reverse order of creation:
+
+elastic-cloudManagedFleet or elastic-selfManagedFleet
+cicd-stack
+alb-stack
+core-stack
+
+1️⃣ Destroy Observability Stack (Elastic Cloud or Self-Managed Fleet)
+Choose the stack you deployed:
+
+cd elastic-cloudManagedFleet
+# or
+cd elastic-selfManagedFleet
+
+terraform destroy -auto-approve
+
+2️⃣ Destroy CI/CD Stack
+cd cicd-stack
+terraform destroy -auto-approve
+
+3️⃣ Destroy ALB + Secret Manager + ECR Resources
+cd alb-stack
+terraform destroy -auto-approve
+
+4️⃣ Destroy Core Infrastructure (EKS + VPC + IAM)
+cd core-stack
+terraform destroy -auto-approve
+
+Optional: Remove local Terraform state files
+
+If you want a clean local workspace:
+
+find . -name ".terraform" -type d -exec rm -rf {} +
+find . -name "terraform.tfstate*" -type f -delete
+
+✅ Cleanup Complete
+
+All AWS resources created by this project have been removed.
+
 📊 Observability: What You Get
 
 Once Elastic Agent is deployed:
